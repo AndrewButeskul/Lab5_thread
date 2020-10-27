@@ -43,16 +43,14 @@ public class Main {
         for (Object jsonObject : jsonArray)
         {
             JSONObject object = (JSONObject) jsonObject;
-//            int id = Integer.parseInt((String) object.get("id"));
-//            String type = (String) object.get("type");
-//            String setup = (String) object.get("setup");
-//            String punchline = (String) object.get("punchline");
-
-            Joke joke = new Joke((int)object.get("id"), (String) object.get("type"),(String) object.get("setup"),(String) object.get("punchline"));
+            Joke joke = new Joke((long)object.get("id"), (String) object.get("type"),(String) object.get("setup"),(String) object.get("punchline"));
             jokes.add(joke);
         }
 
         System.out.println("Imported data after parsing:\n" + jokes);
-        System.out.println(jokes);
+
+        jokes.getJokes().sort(Joke.byIdAsc);
+        System.out.println("After sorting by ID ascending:\n" + jokes);
+
     }
 }

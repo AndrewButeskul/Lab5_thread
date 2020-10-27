@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 public class Joke implements Serializable
 {
-    private int id;
+    private long id;
     private String type;
     private String setup;
     private String punchline;
@@ -25,7 +25,7 @@ public class Joke implements Serializable
      * @param id
      * @param type
      */
-    public Joke(int id, String type, String setup, String punchline) {
+    public Joke(long id, String type, String setup, String punchline) {
         super();
         this.id = id;
         this.type = type;
@@ -33,11 +33,11 @@ public class Joke implements Serializable
         this.punchline = punchline;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
